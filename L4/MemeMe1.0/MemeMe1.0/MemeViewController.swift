@@ -26,7 +26,7 @@ class MemeMainViewController: UIViewController {
         super.viewWillAppear(animated)
         cameraItem.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         self.subscribeToKeyboardNotifications()
-        shareItem.isEnabled = (imagePickerView?.image != nil)
+        shareItem.isEnabled = (imagePickerView?.image != nil) || (imagePickerView == nil)
         
     }
     
@@ -78,9 +78,11 @@ class MemeMainViewController: UIViewController {
         let memeTextAttributes:[String:Any] = [
             NSStrokeColorAttributeName: UIColor.black,
             NSForegroundColorAttributeName: UIColor.white,
-            NSFontAttributeName: UIFont(name:"HelveticaNeue-CondensedBlack", size: 40) ??  UIFont.init(),
+            NSFontAttributeName: UIFont(name:"Helvetica Neue", size: 40) ??  UIFont.init(),
             NSStrokeWidthAttributeName: 3.0
         ]
+                
+        
         TopTextField.defaultTextAttributes = memeTextAttributes
         BotTextField.defaultTextAttributes = memeTextAttributes
         
