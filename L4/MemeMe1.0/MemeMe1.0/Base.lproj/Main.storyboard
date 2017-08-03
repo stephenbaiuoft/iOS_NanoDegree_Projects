@@ -60,10 +60,10 @@
                                                 </connections>
                                             </textField>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YOE-6u-fLd">
-                                                <rect key="frame" x="0.0" y="48" width="374" height="491"/>
+                                                <rect key="frame" x="0.0" y="48" width="374" height="496"/>
                                             </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bot" borderStyle="roundedRect" textAlignment="center" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="GJv-4Y-xw5" userLabel="Bottom Text Field">
-                                                <rect key="frame" x="0.0" y="547" width="374" height="45"/>
+                                                <rect key="frame" x="0.0" y="552" width="374" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="DUZ-nl-pDe"/>
                                                 </constraints>
@@ -120,6 +120,7 @@
                         <outlet property="cancelItem" destination="n7Z-Kf-Qwa" id="vep-bK-2EO"/>
                         <outlet property="imagePickerView" destination="YOE-6u-fLd" id="D6s-0V-vA5"/>
                         <outlet property="navigationBar" destination="C62-mY-GUn" id="MjS-yJ-Lub"/>
+                        <outlet property="outerStackView" destination="Wyg-xh-5dV" id="Ue9-Os-lCY"/>
                         <outlet property="pickerButton" destination="XKP-Ht-Rax" id="QgC-vn-5gK"/>
                         <outlet property="shareItem" destination="14K-JT-mgW" id="M1d-Vu-bsf"/>
                     </connections>

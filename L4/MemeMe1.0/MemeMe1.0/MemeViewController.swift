@@ -26,8 +26,16 @@ class MemeMainViewController: UIViewController {
         super.viewWillAppear(animated)
         cameraItem.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         self.subscribeToKeyboardNotifications()
-        shareItem.isEnabled = (imagePickerView?.image != nil) || (imagePickerView == nil)
+        shareItem.isEnabled = (imagePickerView?.image != nil)
         
+        // Adjust textField sizes
+        updateTextField()
+        
+    }
+    
+    func updateTextField(){
+        TopTextField.sizeToFit()
+        BotTextField.sizeToFit()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -48,6 +56,7 @@ class MemeMainViewController: UIViewController {
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var shareItem: UIBarButtonItem!
     @IBOutlet weak var cancelItem: UIBarButtonItem!
+    @IBOutlet weak var outerStackView: UIStackView!
     
     
     var pickerController: UIImagePickerController!
@@ -106,11 +115,15 @@ class MemeMainViewController: UIViewController {
         
         activityC.completionWithItemsHandler = {
             (activity: UIActivityType?, completed: Bool, returnedItems: [Any]?, activityError:Error?) -> Void in
-            print("Meme is saved here")
+            print("shareMeme: Meme is saved here")
             self.save()
             
             // dimiss the activity view
             activityC.dismiss(animated: true, completion: nil)
+            
+            // re-draw
+            self.outerStackView.setNeedsLayout()
+            print("outerStackView update")
         }
         
         
